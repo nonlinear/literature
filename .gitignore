@@ -1,3 +1,6 @@
 # Ignora todos os arquivos dentro de books/, mas mantém o diretório
 books/*
 !books/.gitkeep
+
+# Ignorar arquivos de ambiente
+.env
