@@ -1,0 +1,234 @@
+{
+  "books": {
+    "Seeing Like a State": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 884503,
+      "embedding_date": "2026-01-06T18:56:03.924731",
+      "queries": [
+        {
+          "date": "2026-01-06T17:30:40.048165",
+          "tokens": 110,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T17:30:58.089475",
+          "tokens": 14,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T17:31:32.679768",
+          "tokens": 25,
+          "cost": 0.0,
+          "month": "2026-01"
+        }
+      ]
+    },
+    "How forests think": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 536325,
+      "embedding_date": "2026-01-06T18:46:15.466587",
+      "queries": [
+        {
+          "date": "2026-01-06T17:53:50.849564",
+          "tokens": 32,
+          "cost": 0.0,
+          "month": "2026-01"
+        }
+      ]
+    },
+    "AI and UX": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 262083,
+      "embedding_date": "2026-01-06T18:46:56.315401",
+      "queries": []
+    },
+    "The Atlas of AI": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 492029,
+      "embedding_date": "2026-01-06T18:48:01.679378",
+      "queries": []
+    },
+    "software above device": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 13135,
+      "embedding_date": "2026-01-06T18:48:15.528988",
+      "queries": []
+    },
+    "Email to the Universe": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 335652,
+      "embedding_date": "2026-01-06T18:49:02.325399",
+      "queries": []
+    },
+    "Code as Creative Medium": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 456791,
+      "embedding_date": "2026-01-06T18:49:57.818916",
+      "queries": []
+    },
+    "I Ching, The Oracle of the Cosmic Way": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 1226861,
+      "embedding_date": "2026-01-06T18:44:14.459522",
+      "queries": [
+        {
+          "date": "2026-01-06T20:35:51.060096",
+          "tokens": 14,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:17:53.800662",
+          "tokens": 40,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:18:15.101311",
+          "tokens": 23,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:18:36.507013",
+          "tokens": 49,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:19:22.832254",
+          "tokens": 44,
+          "cost": 0.0,
+          "month": "2026-01"
+        }
+      ]
+    },
+    "Philosophy and Simulation": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 406706,
+      "embedding_date": "2026-01-06T18:45:04.107003",
+      "queries": []
+    },
+    "Generative Design": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 170763,
+      "embedding_date": "2026-01-06T18:50:26.713561",
+      "queries": []
+    },
+    "The Diamond Age": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 806556,
+      "embedding_date": "2026-01-06T18:51:49.350882",
+      "queries": []
+    },
+    "Heavenly Tyrant": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 685827,
+      "embedding_date": "2026-01-06T18:53:06.095008",
+      "queries": []
+    },
+    "The Ministry for the Future": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 774389,
+      "embedding_date": "2026-01-06T18:54:35.359803",
+      "queries": []
+    },
+    "Content Everywhere": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 318978,
+      "embedding_date": "2026-01-06T18:56:47.867838",
+      "queries": []
+    },
+    "Writing Is Designing": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 256434,
+      "embedding_date": "2026-01-06T18:57:31.461051",
+      "queries": []
+    },
+    "Validating Product Ideas": {
+      "embedding_cost": 0.0,
+      "embedding_tokens": 381936,
+      "embedding_date": "2026-01-06T18:58:21.525619",
+      "queries": []
+    },
+    "usability": {
+      "embedding_cost": 0,
+      "embedding_tokens": 0,
+      "queries": [
+        {
+          "date": "2026-01-06T21:01:56.049251",
+          "tokens": 9,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:03:49.419618",
+          "tokens": 9,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:29:31.873744",
+          "tokens": 48,
+          "cost": 0.0,
+          "month": "2026-01"
+        }
+      ]
+    },
+    "oracles": {
+      "embedding_cost": 0,
+      "embedding_tokens": 0,
+      "queries": [
+        {
+          "date": "2026-01-06T21:05:01.867417",
+          "tokens": 14,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:09:05.659142",
+          "tokens": 15,
+          "cost": 0.0,
+          "month": "2026-01"
+        },
+        {
+          "date": "2026-01-06T21:16:16.059464",
+          "tokens": 14,
+          "cost": 0.0,
+          "month": "2026-01"
+        }
+      ]
+    }
+  },
+  "monthly": {
+    "2026-01": {
+      "Seeing Like a State": {
+        "query_count": 3,
+        "total_cost": 0.0,
+        "total_tokens": 149
+      },
+      "How forests think": {
+        "query_count": 1,
+        "total_cost": 0.0,
+        "total_tokens": 32
+      },
+      "I Ching, The Oracle of the Cosmic Way": {
+        "query_count": 5,
+        "total_cost": 0.0,
+        "total_tokens": 170
+      },
+      "usability": {
+        "query_count": 3,
+        "total_cost": 0.0,
+        "total_tokens": 66
+      },
+      "oracles": {
+        "query_count": 3,
+        "total_cost": 0.0,
+        "total_tokens": 43
+      }
+    }
+  }
+}
