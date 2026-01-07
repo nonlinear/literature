@@ -1,30 +1,31 @@
 # Literature RAG
 
-A system that automatically ingests `.epub` books into a local RAG (Retrieval-Augmented Generation) for fast, private consultation via CLI or VS Code (MCP integration).
+Automated system for private, fast retrieval-augmented queries over your reference books. Uses Gemini for embeddings and LLM, with all API keys kept secure in `.env`. Integrates with VS Code (Copilot MCP) for seamless querying, and supports CLI workflows. All code and data live in `~/Documents/literature`.
 
 ---
 
-## What it is
+## What it does
 
-- Indexes `.epub` books in thematic folders
-- Extracts and updates keywords automatically
-- Allows fast queries with citations and text snippets
-- Integrates with VS Code (Copilot MCP) and CLI
+1. **Indexes `.epub` books** in thematic folders under `books/`
+2. **Extracts and updates keywords** for each folder using Gemini
+3. **Allows fast queries** with citations, markdown links, and text snippets
+4. **Integrates with VS Code (Copilot MCP)** for direct queries in the editor
+5. **Keeps API keys secure** in `.env` (never exposed in config)
+6. **Tracks costs** for queries and embeddings
 
 ---
 
 ## Requirements
 
-- [VS Code](https://code.visualstudio.com/) (for editing and MCP integration)
-- [Hammerspoon](https://www.hammerspoon.org/) (macOS, for auto-indexing)
-- [Python 3.9+](https://www.python.org/)
-- [llama-index](https://github.com/jerryjliu/llama_index) (RAG framework)
-- [ebooklib](https://github.com/aerkalov/ebooklib) (EPUB parsing)
-- [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/) (HTML parsing)
-- [google-generativeai](https://github.com/google/generative-ai-python) (Gemini API)
-- [watchdog](https://github.com/gorakhargosh/watchdog) (file monitoring)
-- an LLM
-- Embedding Model API Key (we use Gemini)
+- **VS Code** (for editing and MCP integration)
+- **Python 3.11+** (recommended)
+- **llama-index** (RAG framework)
+- **ebooklib** (EPUB parsing)
+- **beautifulsoup4** (HTML parsing)
+- **google-generativeai** (Gemini API)
+- **watchdog** (file monitoring)
+- **Hammerspoon** (macOS, for auto-indexing)
+- **Gemini API key** (kept in `.env`)
 
 ---
 
@@ -39,7 +40,7 @@ pip install -r requirements.txt
 # Copy .env.example to .env and add your GOOGLE_API_KEY
 ```
 
-Install [Hammerspoon](https://www.hammerspoon.org/) and configure the `literature_rag.lua` script to watch the `books/` folder for changes.
+Install [Hammerspoon](https://www.hammerspoon.org/) and configure the `literature_rag.lua` script to watch the `books/` folder for changes. All code and data live in `~/Documents/literature`.
 
 ---
 
@@ -47,11 +48,10 @@ Install [Hammerspoon](https://www.hammerspoon.org/) and configure the `literatur
 
 ### Adding or removing books
 
-- Ensure that book is `.epub` format
-- Add it on `/books/` under an existing folder topic, or create a new one
-- Hammerspoon will detect changes and:
-  - Index book automatically
-  - Create or edit .rag-topics with updated keywords
+1. Place `.epub` files in a folder under `books/` (e.g., `books/urbanism/`)
+2. Hammerspoon (macOS) detects changes and triggers auto-indexing
+3. Keywords for each folder are updated automatically using Gemini
+4. `.rag-topics` files are created/updated for keyword management
 
 ### CLI
 
@@ -66,9 +66,10 @@ Install [Hammerspoon](https://www.hammerspoon.org/) and configure the `literatur
 
 ### VS Code (MCP)
 
-- Ask in Copilot:
-  `What is legibility?`
-  `Show me usage for anthropocene`
+- Ask questions directly in Copilot (MCP panel):
+  - `What is legibility?`
+  - `Show me usage for anthropocene`
+  - Results include citations, markdown links, and cost tracking
 
 ---
 
@@ -82,7 +83,7 @@ graph TD
   k1 --> f1[Select folder]
   f1 --> r1[llama-index retrieval]
   r1 --> v1[VectorStore]
-  r1 --> l1[LLM]
+  r1 --> l1[Gemini LLM]
   l1 --> u1[Answer to user]
 ```
 
@@ -97,6 +98,14 @@ graph TD
   w1 --> k2[Update rag-topics]
   v2 --> s1[Persist to storage]
 ```
+
+---
+
+## Security & Best Practices
+
+- All API keys are kept in `.env` and never exposed in config files or code.
+- Only the Gemini API key is required for embedding and LLM.
+- All code and data live in `~/Documents/literature` for privacy and portability.
 
 ---
 

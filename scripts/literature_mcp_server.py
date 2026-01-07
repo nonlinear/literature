@@ -15,12 +15,12 @@ from dotenv import load_dotenv
 sys.path.insert(0, str(Path(__file__).parent))
 
 from llama_index.core import StorageContext, load_index_from_storage, Settings
-from llama_index.embeddings.gemini import GeminiEmbedding
+from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
 from llama_index.llms.google_genai import GoogleGenAI
 from rag_cost_tracker import RAGCostTracker
 
 # Load environment
-load_dotenv()
+load_dotenv(dotenv_path="/Users/nfrota/Documents/notes/.env", override=True)
 
 # Setup paths
 BASE_DIR = Path(__file__).parent.parent
@@ -32,8 +32,8 @@ api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:
     raise ValueError("GOOGLE_API_KEY not found in .env")
 
-embed_model = GeminiEmbedding(model_name="models/embedding-001", api_key=api_key)
-llm = GoogleGenAI(model="models/gemini-2.5-flash", api_key=api_key)
+embed_model = GoogleGenAIEmbedding(model_name="embedding-001", api_key=api_key)
+llm = GoogleGenAI(model="gemini-2.5-pro", api_key=api_key)
 Settings.embed_model = embed_model
 Settings.llm = llm
 
@@ -259,9 +259,13 @@ def get_costs() -> dict[str, Any]:
     }
 
 
-# MCP Protocol handlers
 def handle_request(method: str, params: dict[str, Any]) -> dict[str, Any]:
     """Handle MCP requests"""
+    if method == "setLogLevel":
+        return {"result": "Log level not implemented"}
+
+    if method == "initialize":
+        return {"result": "MCP server initialized"}
 
     if method == "tools/list":
         return {
@@ -275,13 +279,8 @@ def handle_request(method: str, params: dict[str, Any]) -> dict[str, Any]:
                             "question": {
                                 "type": "string",
                                 "description": "The question to ask about the literature"
-                            },
-                            "book_context": {
-                                "type": "string",
-                                "description": "Optional: specific book name for context"
                             }
-                        },
-                        "required": ["question"]
+                        }
                     }
                 },
                 {
@@ -303,7 +302,7 @@ def handle_request(method: str, params: dict[str, Any]) -> dict[str, Any]:
             ]
         }
 
-    elif method == "tools/call":
+    if method == "tools/call":
         tool_name = params.get("name")
         arguments = params.get("arguments", {})
 
@@ -314,54 +313,14 @@ def handle_request(method: str, params: dict[str, Any]) -> dict[str, Any]:
             )
             return {"content": [{"type": "text", "text": json.dumps(result, indent=2)}]}
 
-        elif tool_name == "list_books":
+        if tool_name == "list_books":
             result = list_books()
             return {"content": [{"type": "text", "text": json.dumps(result, indent=2)}]}
 
-        elif tool_name == "get_literature_costs":
+        if tool_name == "get_literature_costs":
             result = get_costs()
             return {"content": [{"type": "text", "text": json.dumps(result, indent=2)}]}
 
-        else:
-            raise ValueError(f"Unknown tool: {tool_name}")
+        raise ValueError(f"Unknown tool: {tool_name}")
 
-    else:
-        raise ValueError(f"Unknown method: {method}")
-
-
-def main():
-    """MCP Server main loop"""
-    print("📚 Literature RAG MCP Server started", file=sys.stderr)
-
-    for line in sys.stdin:
-        try:
-            request = json.loads(line)
-            method = request.get("method")
-            params = request.get("params", {})
-
-            result = handle_request(method, params)
-
-            response = {
-                "jsonrpc": "2.0",
-                "id": request.get("id"),
-                "result": result
-            }
-
-            print(json.dumps(response))
-            sys.stdout.flush()
-
-        except Exception as e:
-            error_response = {
-                "jsonrpc": "2.0",
-                "id": request.get("id") if 'request' in locals() else None,
-                "error": {
-                    "code": -32000,
-                    "message": str(e)
-                }
-            }
-            print(json.dumps(error_response))
-            sys.stdout.flush()
-
-
-if __name__ == "__main__":
-    main()
+    raise ValueError(f"Unknown method: {method}")
