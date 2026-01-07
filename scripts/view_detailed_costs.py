@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Detailed cost report for Literature RAG
-Shows costs per book, per folder, and per month
+Detailed cost report for Literature RAG.
+Triggered by CLI: python3 scripts/view_detailed_costs.py
 """
 
 import json

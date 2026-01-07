@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Cost tracker for RAG system - tracks embedding and query costs per book
+Tracks embedding and query costs per book.
+Triggered internally by other scripts whenever embeddings or queries are run.
 """
 
 import json

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Watchdog service for automatic book indexing
-Monitors literature/books/ and auto-indexes new EPUBs
+Watchdog for automatic book indexing.
+Triggered by any file change in literature/books/ (via Hammerspoon or CLI). Auto-indexes new/changed EPUBs.
 """
 
 import os

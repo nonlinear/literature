@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Query indexed books using RAG
-Usage: python3 query_book.py "Book Name" "Your question"
+Query indexed books using RAG.
+Triggered by CLI: python3 query_book.py "Book Name" "Your question"
 """
 
 import sys

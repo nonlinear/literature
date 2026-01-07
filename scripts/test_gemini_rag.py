@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Test script for RAG with embeddings
-Indexes an EPUB and performs a test query with cost tracking
+Test script for RAG with embeddings.
+Triggered by CLI: python3 scripts/test_gemini_rag.py (indexes a test EPUB and runs a query)
 """
 
 import os

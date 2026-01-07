@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Rebuild RAG index from scratch
-Use this after removing books to clean up the index
+Rebuilds RAG index from scratch.
+Triggered by CLI: python3 scripts/rebuild_index.py (interactive, wipes and rebuilds index)
 """
 
 import sys

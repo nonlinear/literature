@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 MCP Server for Literature RAG
-Allows VS Code Copilot to query indexed books
+Triggered automatically by VS Code Copilot MCP queries. Serves book answers to Copilot.
 """
 
 import os
