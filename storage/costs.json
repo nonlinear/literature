@@ -16,6 +16,12 @@
           "tokens": 15,
           "cost": 0.0,
           "month": "2026-01"
+        },
+        {
+          "date": "2026-01-08T21:26:35.352283",
+          "tokens": 34,
+          "cost": 0.0,
+          "month": "2026-01"
         }
       ]
     },
@@ -204,9 +210,9 @@
   "monthly": {
     "2026-01": {
       "I Ching, The Oracle of the Cosmic Way": {
-        "query_count": 1,
+        "query_count": 2,
         "total_cost": 0.0,
-        "total_tokens": 15
+        "total_tokens": 49
       },
       "Foundations of Computer Vision": {
         "query_count": 2,
